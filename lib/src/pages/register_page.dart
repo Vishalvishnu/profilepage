@@ -15,13 +15,6 @@ class RegisterPage extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    "bub.jpg",
-                    height: 250,
-                  ),
-                ),
                 IconButton(
                   icon: Icon(Icons.keyboard_arrow_left),
                   onPressed: () {
@@ -31,74 +24,45 @@ class RegisterPage extends StatelessWidget {
               ],
             ),
             Text(
-              "Personal info",
+              "Change Password",
               style: TextStyle(color: Colors.black38),
               textAlign: TextAlign.right,
             ),
             Text(
-              "Register Individual Account",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Themes.colorHeader,
-                fontSize: 28,
-              ),
-            ),
-            SizedBox(height: 24),
-            Text(
-              "For the purpose of industry regulation, your details are required",
-              style: TextStyle(color: Colors.black38),
+              "Profile",
+              style: TextStyle(color: Colors.black, fontSize: 25),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 25),
             Text(
               " ",
               style: TextStyle(color: Colors.black38),
               textAlign: TextAlign.center,
             ),
-            Text(
-              "Your fullname*",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Themes.colorHeader,
-                fontSize: 16,
+            CircleAvatar(
+              radius: 55,
+              backgroundColor: Color(0xffFDCF09),
+              child: CircleAvatar(
+                radius: 50,
+                backgroundImage:
+                    AssetImage('D:\showcase\register page\assets\register.jpg'),
               ),
             ),
-            SizedBox(height: 12),
+            SizedBox(height: 25),
             Text(
               " ",
               style: TextStyle(color: Colors.black38),
               textAlign: TextAlign.center,
+            ),
+            TextButton.icon(
+              icon: const Icon(Icons.camera),
+              label: const Text('Add a pic'),
+              onPressed: () {},
             ),
             TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: 'Enter your name',
-              ),
-            ),
-            SizedBox(height: 12),
-            Text(
-              " ",
-              style: TextStyle(color: Colors.black38),
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              "Email address*",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Themes.colorHeader,
-                fontSize: 16,
-              ),
-            ),
-            SizedBox(height: 12),
-            Text(
-              " ",
-              style: TextStyle(color: Colors.black38),
-              textAlign: TextAlign.center,
-            ),
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter email address',
+                hintText: 'User name',
               ),
             ),
             SizedBox(height: 30),
@@ -108,7 +72,7 @@ class RegisterPage extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             Text(
-              "Create Password*",
+              "About Me",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Themes.colorHeader,
@@ -121,26 +85,56 @@ class RegisterPage extends StatelessWidget {
               style: TextStyle(color: Colors.black38),
               textAlign: TextAlign.center,
             ),
-            TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter password',
-              ),
-            ),
+            TextFormField(
+                minLines: 1,
+                maxLines: 5, // allow user to enter 5 line in textfield
+                keyboardType: TextInputType
+                    .multiline // user keyboard will have a button to move cursor to next line
+
+                ),
             SizedBox(height: 30),
             Text(
               " ",
               style: TextStyle(color: Colors.black38),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 18),
+            SizedBox(height: 12),
+            FlatButton(
+              color: Themes.color2,
+              padding: EdgeInsets.all(8),
+              child: Text(
+                "Temporarily disable my account",
+                style: TextStyle(color: Colors.black38, fontSize: 18),
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(4),
+                ),
+              ),
+              onPressed: () {},
+            ),
+            SizedBox(height: 12),
+            FlatButton(
+              color: Themes.color2,
+              padding: EdgeInsets.all(8),
+              child: Text(
+                "Delete my account",
+                style: TextStyle(color: Colors.black38, fontSize: 18),
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(4),
+                ),
+              ),
+              onPressed: () {},
+            ),
+            SizedBox(height: 12),
             FlatButton(
               color: Themes.colorPrimary,
-              padding: EdgeInsets.all(12),
+              padding: EdgeInsets.all(4),
               child: Text(
-                "Register Account",
-                style: TextStyle(color: Colors.white, fontSize: 18),
+                "Save",
+                style: TextStyle(color: Colors.white, fontSize: 16),
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(
@@ -148,111 +142,6 @@ class RegisterPage extends StatelessWidget {
                 ),
               ),
               onPressed: () {},
-            ),
-            SizedBox(height: 24),
-            Text(
-              "Or",
-              style: TextStyle(color: Colors.black38),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 12),
-            Row(
-              children: [
-                Expanded(
-                  child: AppOutlineButton(
-                    asset: "gog.png",
-                    onTap: () {},
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 75),
-            Text(
-              "Logo",
-              style: TextStyle(color: Colors.black),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 75),
-            Text(
-              " ",
-              style: TextStyle(color: Colors.black),
-              textAlign: TextAlign.center,
-            ),
-            Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('Contact'),
-                ],
-              ),
-            ),
-            Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('Mail Us: works@creatt.in'),
-                ],
-              ),
-            ),
-            Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('Call Us: +1800 000 0001'),
-                ],
-              ),
-            ),
-            SizedBox(height: 75),
-            Text(
-              " ",
-              style: TextStyle(color: Colors.black),
-              textAlign: TextAlign.center,
-            ),
-            Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('Visit Us'),
-                ],
-              ),
-            ),
-            Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('123 Alberta St, San Francisco,'),
-                ],
-              ),
-            ),
-            SizedBox(height: 75),
-            Text(
-              " ",
-              style: TextStyle(color: Colors.black),
-              textAlign: TextAlign.center,
-            ),
-            Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('Legal'),
-                ],
-              ),
-            ),
-            Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                      'Copyright © 2021 Creatt Wire UI Kit All rights reserved'),
-                ],
-              ),
             ),
           ],
         ),
